@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Welcome to SignUp page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+        crossorigin="anonymous"
+        />
+    </head>
+    <div class="background-image">
+        <div class="center">
+            <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            .background-image {
+                background-image: url("./static/mdoc.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 100vh;
+            }
+            .center {
+                text-align: center;
+                padding-top: 10vh;
+            }
+            .right {
+                text-align: right;
+            }
+            </style>
+    <body>
+    {%for message in messages %}
+        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role = "alert">
+        <strong> Message:</strong>{{message}}
+        </div>
+    {% endfor %}
+        <form action="/signup" method="post">
+        {% csrf_token %}
+            <label for="">Username</label><br>
+            <input type="text" id="username" name="username" placeholder="Create a username(only latter and number)" required>
+            <br>
+
+            <label for="">First name</label><br>
+            <input type="text" id="fname" name="fname" placeholder="Enter your first name" required>
+            <br>
+
+            <label for="">Last name</label><br>
+            <input type="text" id="lname" name="lname" placeholder="Enter your last name" required>
+            <br>
+
+            <label for="">Email</label><br>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            <br>
+
+            <label for="">Phone</label><br>
+            <input type="number" id="phone" name="phone" placeholder="Enter your phone number" required>
+            <br>
+
+            <label for="">Medical from</label><br>
+            <input type="text" id="medical" name="medical" placeholder="Passing medical" required>
+            <br>
+
+            <label for="">Working Medical</label><br>
+            <input type="text" id="wmedical" name="wmedical" placeholder="Medical working for" required>
+            <br>
+
+            <label for="">Address</label><br>
+            <input type="text" id="address" name="address" placeholder="Address" required>
+            <br>
+
+            <label for="">Specialized in</label><br>
+            <input type="text" id="specialized" name="specialized" placeholder="Specialized in" required>
+            <br>
+
+            <label for="">Password</label><br>
+            <input type="password" id="pass1" name="pass1" placeholder="Create a new password" required>
+            <br>
+
+            <label for="">Confirm your password</label><br>
+            <input type="password" id="pass2" name="pass2" placeholder="Confirm your password" required>
+            <br>
+
+            <button class="btn btn-primary mt-2 social-button w-15" type="submit">Sign Up</button>
+        </form>
+
+        </div>
+        </div>
+        
+        <script src="" async defer></script>
+        <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
